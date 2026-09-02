@@ -15,9 +15,9 @@ export const Route = createFileRoute("/$lang/")({
 });
 
 const mission = {
-  es: "Foundation Bruma reúne artistas de Europa del Este para quienes Argentina se volvió un espacio de transformación y un nuevo hogar. Trabajamos con lo que ocurre en el umbral: la lengua que todavía no se domina, el archivo que llegó incompleto, la forma que aparece antes del nombre.",
-  en: "Foundation Bruma brings together artists from Eastern Europe for whom Argentina became a space of transformation and a new home. We work with what happens at the threshold: the language not yet mastered, the archive that arrived incomplete, the form that appears before its name.",
-  ru: "Foundation Bruma объединяет художников из Восточной Европы, для которых Аргентина стала пространством трансформации и новым домом. Мы работаем с тем, что происходит на пороге: язык, которым ещё не владеешь, архив, дошедший не полностью, форма, возникающая раньше названия.",
+  es: "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas de Europa del Este. Exploramos el estado de estar entre: entre el pasado y el presente, la memoria y la experiencia nueva, lo conocido y lo desconocido. Lo que quedó atrás no desaparece: sigue existiendo en las imágenes, los gestos, el lenguaje, las huellas digitales y la memoria personal, entrando en diálogo con el nuevo territorio. Bruma nace de este estado de incertidumbre como un espacio donde la identidad no es algo fijo, sino un proceso que se forma, cambia y se reconstruye constantemente. Nuestra misión es crear un espacio para el arte contemporáneo donde los artistas puedan explorar estos procesos, compartir experiencias y generar nuevos vínculos entre personas, culturas, prácticas artísticas y contextos. Estamos abiertos a colaborar con artistas, curadores, instituciones culturales, investigadores y otras iniciativas que compartan nuestros valores.",
+  en: "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation, created by a collective of seven artists from Eastern Europe. We explore the experience of being in-between — between past and present, memory and new experience, the familiar and the unknown. What has been left behind does not disappear: it continues to exist through images, gestures, language, digital traces, and personal memory, entering into dialogue with a new territory. Bruma emerges from this state of uncertainty as a space where identity is not fixed, but constantly formed, transformed, and reconstructed. Our mission is to create a space for contemporary art where artists can explore these processes, exchange experiences, and build new connections between people, cultures, artistic practices, and contexts. We are open to collaborations with artists, curators, cultural institutions, researchers, and other initiatives that share our values.",
+  ru: "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации, созданный объединением из семи художников из Восточной Европы. Мы исследуем состояние между — между прошлым и настоящим, памятью и новым опытом, знакомым и неизвестным. То, что осталось позади, не исчезает: оно продолжает существовать в образах, жестах, языке, цифровых следах и личной памяти, вступая в диалог с новым местом. Bruma возникает из этого состояния неопределённости — как пространство, где идентичность не является чем-то фиксированным, а постоянно формируется, меняется и пересобирается. Наша миссия — создавать пространство для современного искусства, в котором художники могут исследовать эти процессы, обмениваться опытом и создавать новые связи — между людьми, культурами, художественными практиками и контекстами. Мы открыты к сотрудничеству с художниками, кураторами, культурными институциями, исследователями и другими инициативами, которым близки наши ценности.",
 };
 
 const activities = [
@@ -25,45 +25,45 @@ const activities = [
     key: "exhibitions",
     title: { es: "Exhibiciones", en: "Exhibitions", ru: "Выставки" },
     body: {
-      es: "Muestras colectivas e individuales en sedes propias y en instituciones asociadas de Argentina y el exterior.",
-      en: "Group and solo shows in our own venues and with partner institutions in Argentina and abroad.",
-      ru: "Групповые и персональные выставки на своих площадках и в институциях-партнёрах в Аргентине и за рубежом.",
+      es: "Organizamos exposiciones colectivas e individuales en nuestros propios espacios y en instituciones asociadas, en Argentina y en otros países.",
+      en: "We organize group and solo exhibitions in our own spaces and in partner institutions in Argentina and abroad.",
+      ru: "Организуем групповые и персональные выставки на своих площадках и в институтах-партнёрах в Аргентине и за рубежом.",
     },
   },
   {
     key: "research",
     title: { es: "Investigación", en: "Research", ru: "Исследования" },
     body: {
-      es: "Programas de largo aliento sobre migración, lengua, memoria material y prácticas de archivo.",
-      en: "Long-form programmes on migration, language, material memory and archival practice.",
-      ru: "Долгие программы о миграции, языке, материальной памяти и архивных практиках.",
+      es: "Apoyamos investigaciones sobre migración, lenguaje, memoria, tradiciones, búsqueda de pertenencia, diálogo con el territorio y prácticas de archivo.",
+      en: "We support research into migration, language, memory, traditions, belonging, dialogue with territory, and archival practices.",
+      ru: "Поддерживаем исследования миграции, языка, памяти, традиций, поиска своего места, диалога с территорией, архивных практик.",
     },
   },
   {
-    key: "publications",
-    title: { es: "Publicaciones", en: "Publications", ru: "Публикации" },
+    key: "funding",
+    title: { es: "Apoyo y financiamiento", en: "Funding support", ru: "Грантовая поддержка" },
     body: {
-      es: "Cuadernos, ensayos y textos de artista editados por la fundación, en tres idiomas.",
-      en: "Notebooks, essays and artist texts published by the foundation in three languages.",
-      ru: "Тетради, эссе и тексты художников, издаваемые фондом на трёх языках.",
+      es: "Buscamos oportunidades de financiamiento y convocatorias para hacer posibles proyectos artísticos independientes, con especial atención a iniciativas de artistas migrantes y refugiados.",
+      en: "We seek funding opportunities and grants to help realize independent artistic projects, with a particular focus on initiatives by migrant and refugee artists.",
+      ru: "Ищем возможности финансирования для реализации независимых творческих проектов художников-беженцев и мигрантов.",
     },
   },
   {
     key: "collaborations",
     title: { es: "Colaboraciones", en: "Collaborations", ru: "Коллаборации" },
     body: {
-      es: "Trabajo conjunto con espacios autogestionados, curadores independientes y editoriales.",
-      en: "Joint work with self-organised spaces, independent curators and publishers.",
-      ru: "Совместная работа с самоорганизованными площадками, независимыми кураторами и издательствами.",
+      es: "Trabajamos junto a espacios autogestionados, curadores independientes, editoriales y otras iniciativas culturales.",
+      en: "We work with self-organized spaces, independent curators, publishers, and other cultural initiatives.",
+      ru: "Работаем совместно с самоорганизованными площадками, независимыми кураторами и издательствами.",
     },
   },
   {
     key: "public",
     title: { es: "Programas públicos", en: "Public programmes", ru: "Публичные программы" },
     body: {
-      es: "Lecturas, escuchas, visitas de taller y conversaciones abiertas al público.",
-      en: "Readings, listening sessions, studio visits and conversations open to the public.",
-      ru: "Чтения, слушания, визиты в мастерские и открытые разговоры.",
+      es: "Organizamos lecturas, escuchas, visitas a talleres y conversaciones abiertas.",
+      en: "We organize readings, listening sessions, studio visits, and open conversations.",
+      ru: "Организуем чтения, слушания, визиты в мастерские и открытые разговоры.",
     },
   },
 ];

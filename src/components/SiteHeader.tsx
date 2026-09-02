@@ -6,10 +6,8 @@ import { LANGS, dict, type Lang } from "@/lib/i18n";
 const navItems = (lang: Lang) => {
   const d = dict[lang].nav;
   return [
-    { to: "/$lang", label: d.about, exact: true },
     { to: "/$lang/artists", label: d.artists },
     { to: "/$lang/projects", label: d.projects },
-    { to: "/$lang/publications", label: d.publications },
     { to: "/$lang/press", label: d.press },
     { to: "/$lang/contact", label: d.contact },
   ] as const;

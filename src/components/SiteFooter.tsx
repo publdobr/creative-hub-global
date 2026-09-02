@@ -17,10 +17,8 @@ export function SiteFooter({ lang }: { lang: Lang }) {
         <nav className="md:col-span-3" aria-label="Footer">
           <ul className="space-y-2">
             {[
-              { to: "/$lang" as const, label: d.nav.about },
               { to: "/$lang/artists" as const, label: d.nav.artists },
               { to: "/$lang/projects" as const, label: d.nav.projects },
-              { to: "/$lang/publications" as const, label: d.nav.publications },
               { to: "/$lang/press" as const, label: d.nav.press },
               { to: "/$lang/contact" as const, label: d.nav.contact },
             ].map((i) => (
