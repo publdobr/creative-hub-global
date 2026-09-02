@@ -1,7 +1,10 @@
-import portrait1 from "@/assets/portrait-1.jpg";
-import portrait2 from "@/assets/portrait-2.jpg";
-import portrait3 from "@/assets/portrait-3.jpg";
-import portrait4 from "@/assets/portrait-4.jpg";
+import portraitBerezina from "@/assets/portrait-berezina.jpg";
+import portraitKirilina from "@/assets/portrait-kirilina.jpg";
+import portraitMiloslavskii from "@/assets/portrait-miloslavskii.jpg";
+import portraitLavrinenko from "@/assets/portrait-lavrinenko.jpg";
+import portraitChibis from "@/assets/portrait-chibis.jpg";
+import portraitGomon from "@/assets/portrait-gomon.jpg";
+import portraitChursin from "@/assets/portrait-chursin.jpg";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
@@ -9,9 +12,13 @@ import work4 from "@/assets/work-4.jpg";
 
 import type { Artist, PressItem, Project, Publication, Work } from "./types";
 
-export const IMAGES = { portrait1, portrait2, portrait3, portrait4, work1, work2, work3, work4 };
+export const IMAGES = { 
+  portraitBerezina, portraitKirilina, portraitMiloslavskii, portraitLavrinenko, 
+  portraitChibis, portraitGomon, portraitChursin,
+  work1, work2, work3, work4 
+};
 
-const portraits = [portrait1, portrait2, portrait3, portrait4];
+const portraits = [portraitBerezina, portraitKirilina, portraitMiloslavskii, portraitLavrinenko, portraitChibis, portraitGomon, portraitChursin];
 const works = [work1, work2, work3, work4];
 
 type Seed = {
@@ -25,138 +32,151 @@ type Seed = {
 
 const seeds: Seed[] = [
   {
-    id: "irina-molotova",
-    name: "Irina Molotova",
+    id: "anastasiia-berezina",
+    name: "Anastasiia Berezina",
     birthYear: 1988,
-    city: ["Buenos Aires / Kyiv", "Buenos Aires / Kyiv", "Буэнос-Айрес / Киев"],
-    practice: ["Pintura y archivo", "Painting and archive", "Живопись и архив"],
-    media: ["Óleo, papel, video", "Oil, paper, video", "Масло, бумага, видео"],
+    city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
+    practice: ["Pintura, instalación participativa", "Painting, participatory installation", "Живопись, участвующая инсталляция"],
+    media: ["Acrílico sobre lienzo", "Acrylic on canvas", "Акрил на холсте"],
   },
   {
-    id: "pavel-arsen",
-    name: "Pavel Arsen",
-    birthYear: 1979,
-    city: ["Buenos Aires / Minsk", "Buenos Aires / Minsk", "Буэнос-Айрес / Минск"],
-    practice: ["Escultura", "Sculpture", "Скульптура"],
-    media: ["Cerámica, vidrio, yeso", "Ceramics, glass, plaster", "Керамика, стекло, гипс"],
-  },
-  {
-    id: "nadia-verjova",
-    name: "Nadia Verjova",
-    birthYear: 1993,
-    city: ["Córdoba / Tbilisi", "Córdoba / Tbilisi", "Кордова / Тбилиси"],
-    practice: ["Fotografía documental", "Documentary photography", "Документальная фотография"],
-    media: ["Película 35mm, impresión gelatina", "35mm film, gelatin silver print", "Плёнка 35 мм, желатиносеребряная печать"],
-  },
-  {
-    id: "milena-sorokin",
-    name: "Milena Sorokin",
-    birthYear: 1985,
-    city: ["Buenos Aires / Riga", "Buenos Aires / Riga", "Буэнос-Айрес / Рига"],
-    practice: ["Instalación y texto", "Installation and text", "Инсталляция и текст"],
-    media: ["Tela, sonido, texto", "Textile, sound, text", "Ткань, звук, текст"],
-  },
-  {
-    id: "artem-lys",
-    name: "Artem Lys",
-    birthYear: 1991,
-    city: ["Rosario / Kharkiv", "Rosario / Kharkiv", "Росарио / Харьков"],
-    practice: ["Dibujo", "Drawing", "Рисунок"],
-    media: ["Carbonilla, tinta", "Charcoal, ink", "Уголь, тушь"],
-  },
-  {
-    id: "vera-kandel",
-    name: "Vera Kandel",
-    birthYear: 1974,
-    city: ["Buenos Aires / Chisinau", "Buenos Aires / Chisinau", "Буэнос-Айрес / Кишинёв"],
-    practice: ["Video y performance", "Video and performance", "Видео и перформанс"],
-    media: ["Video HD, voz", "HD video, voice", "HD-видео, голос"],
-  },
-  {
-    id: "grisha-ostrov",
-    name: "Grisha Ostrov",
-    birthYear: 1996,
-    city: ["Buenos Aires / Sofía", "Buenos Aires / Sofia", "Буэнос-Айрес / София"],
-    practice: ["Pintura expandida", "Expanded painting", "Расширенная живопись"],
-    media: ["Acrílico, malla, madera", "Acrylic, mesh, wood", "Акрил, сетка, дерево"],
-  },
-  {
-    id: "lena-brik",
-    name: "Lena Brik",
-    birthYear: 1990,
-    city: ["Mendoza / Vilnius", "Mendoza / Vilnius", "Мендоса / Вильнюс"],
-    practice: ["Cerámica", "Ceramics", "Керамика"],
-    media: ["Gres, engobe, esmalte", "Stoneware, engobe, glaze", "Керамогранит, ангоб, глазурь"],
-  },
-  {
-    id: "sasha-gart",
-    name: "Sasha Gart",
-    birthYear: 1983,
-    city: ["Buenos Aires / Odesa", "Buenos Aires / Odesa", "Буэнос-Айрес / Одесса"],
-    practice: ["Collage e impresión", "Collage and print", "Коллаж и печать"],
-    media: ["Papel de archivo, serigrafía", "Archival paper, screenprint", "Архивная бумага, шелкография"],
-  },
-  {
-    id: "danil-orlov",
-    name: "Danil Orlov",
-    birthYear: 1987,
-    city: ["La Plata / Moscú", "La Plata / Moscow", "Ла-Плата / Москва"],
-    practice: ["Sonido e instalación", "Sound and installation", "Звук и инсталляция"],
-    media: ["Campo sonoro, objetos", "Field recording, objects", "Полевые записи, объекты"],
-  },
-  {
-    id: "polina-ruk",
-    name: "Polina Ruk",
-    birthYear: 1994,
-    city: ["Buenos Aires / Varsovia", "Buenos Aires / Warsaw", "Буэнос-Айрес / Варшава"],
-    practice: ["Grabado", "Printmaking", "Печатная графика"],
-    media: ["Aguafuerte, monotipo", "Etching, monotype", "Офорт, монотипия"],
-  },
-  {
-    id: "iván-shelo",
-    name: "Iván Shelo",
-    birthYear: 1992,
-    city: ["Buenos Aires / Ereván", "Buenos Aires / Yerevan", "Буэнос-Айрес / Ереван"],
-    practice: ["Arte sonoro", "Sound art", "Саунд-арт"],
-    media: ["Sintetizadores modulares", "Modular synthesis", "Модульные синтезаторы"],
-  },
-  {
-    id: "eugenia-tut",
-    name: "Eugenia Tut",
+    id: "kristina-kirilina",
+    name: "Kristina Kirilina",
     birthYear: 1989,
-    city: ["Buenos Aires / Praga", "Buenos Aires / Prague", "Буэнос-Айрес / Прага"],
-    practice: ["Dibujo y libro de artista", "Drawing and artist books", "Рисунок и книга художника"],
-    media: ["Grafito, encuadernación", "Graphite, bookbinding", "Графит, переплёт"],
+    city: ["Buenos Aires / Ucrania", "Buenos Aires / Ukraine", "Буэнос-Айрес / Украина"],
+    practice: ["Pintura monumental, vidrio", "Monumental painting, glass", "Монументальная живопись, стекло"],
+    media: ["Óleo sobre tela, vidrio, vitral", "Oil on canvas, glass, stained glass", "Масло на холсте, стекло, витраж"],
   },
   {
-    id: "semion-galin",
-    name: "Semión Galin",
-    birthYear: 1981,
-    city: ["Buenos Aires / Bakú", "Buenos Aires / Baku", "Буэнос-Айрес / Баку"],
-    practice: ["Pintura", "Painting", "Живопись"],
-    media: ["Óleo sobre lino", "Oil on linen", "Масло, лён"],
+    id: "ksusha-miloslavskii",
+    name: "Ksusha Miloslavskii",
+    birthYear: 1987,
+    city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
+    practice: ["Collage abstracto, objeto artístico", "Abstract collage, artistic object", "Абстрактный коллаж, арт-объект"],
+    media: ["Collage, papel, óleo, acrílico, textil", "Collage, paper, oil, acrylic, textile", "Коллаж, бумага, масло, акрил, ткань"],
+  },
+  {
+    id: "olesia-lavrinenko",
+    name: "Olesia Lavrinenko",
+    birthYear: 1986,
+    city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
+    practice: ["Técnica mixta, pintura", "Mixed media, painting", "Смешанная техника, живопись"],
+    media: ["Tinta, acuarela, acrílico, papel, lienzo", "Ink, watercolor, acrylic, paper, canvas", "Тушь, акварель, акрил, бумага, холст"],
+  },
+  {
+    id: "pasha-chibis",
+    name: "Pasha Chibis",
+    birthYear: 1982,
+    city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
+    practice: ["Pintura, diseño", "Painting, design", "Живопись, дизайн"],
+    media: ["Acrílico sobre lienzo", "Acrylic on canvas", "Акрил на холсте"],
+  },
+  {
+    id: "polina-gomon",
+    name: "Polina Gomon",
+    birthYear: 1991,
+    city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
+    practice: ["Dibujo plein air, técnica gráfica", "Plein air drawing, graphic technique", "Рисунок пленэр, графическая техника"],
+    media: ["Tinta, papel, pastel al óleo", "Ink, paper, oil pastel", "Тушь, бумага, масляная пастель"],
+  },
+  {
+    id: "yuri-chursin",
+    name: "Yuri Chursin",
+    birthYear: 1963,
+    city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
+    practice: ["Pintura, técnica mixta", "Painting, mixed media", "Живопись, смешанная техника"],
+    media: ["Óleo, esmalte, tela vaquera, acrílico", "Oil, enamel, denim, acrylic", "Масло, эмаль, деним, акрил"],
   },
 ];
 
 const bioTemplates = {
-  es: (s: Seed) =>
-    `Nació en ${s.city[0].split(" / ")[1]} en ${s.birthYear}. Desde 2019 vive y trabaja en Argentina. Su práctica parte de materiales de archivo familiar, documentos de tránsito y fragmentos de idioma que se pierden en la mudanza. Formó parte de programas de residencia en Buenos Aires y Rosario, y sus obras integran colecciones privadas en Europa y América del Sur.`,
-  en: (s: Seed) =>
-    `Born in ${s.city[1].split(" / ")[1]} in ${s.birthYear}. Living and working in Argentina since 2019. The practice starts from family archives, transit documents and fragments of language lost in relocation. Participated in residency programmes in Buenos Aires and Rosario; works are held in private collections across Europe and South America.`,
-  ru: (s: Seed) =>
-    `Родился(ась) в городе ${s.city[2].split(" / ")[1]} в ${s.birthYear} году. С 2019 года живёт и работает в Аргентине. Практика вырастает из семейного архива, транзитных документов и фрагментов языка, теряющихся при переезде. Участник(ца) резиденций в Буэнос-Айресе и Росарио; работы находятся в частных собраниях Европы и Южной Америки.`,
+  es: {
+    "anastasiia-berezina": "Anastasia Berezina es una artista multidisciplinaria. En su práctica explora los temas de la identidad, la infancia y la búsqueda del propio lugar en el mundo. En sus obras aparecen con frecuencia el azul y el blanco — colores de libertad y profundidad, vinculados a la experiencia de la migración de Rusia a Argentina. Se convierten en un puente visual entre el pasado y el presente, entre la memoria y una nueva realidad. A través del arte urbano, la pintura y las instalaciones participativas, la artista busca involucrar al espectador en un diálogo y convertirlo de observador en participante del proceso artístico.",
+    "kristina-kirilina": "La artista explora la percepción del tiempo y la naturaleza fragmentaria de la memoria. En sus obras, el pasado no se presenta como un hecho fijo, sino como reflejos transparentes y rastros de luz, en constante cambio y fuga. En su práctica, la artista trabaja con diversos medios —pintura, relieve, instalación y objetos lumínicos— explorando la interacción entre material, forma y luz. Utiliza vidrio y recurre a técnicas como el vitral y el bajorrelieve, creando obras donde cada medio se convierte en expresión de la idea.",
+    "ksusha-miloslavskii": "Ksusḧa Miloslavskii es una artista interdisciplinaria que trabaja en el campo del arte contemporáneo. Su práctica se centra en la exploración de la identidad y las manifestaciones visibles del tiempo a través de collages abstractos, objetos artísticos y máscaras. Paralelamente, se desempeña como escenógrafa. Su obra forma parte de la colección del Museo de Arte Kovalenko (Rusia), así como de colecciones privadas en Rusia, Ucrania, Serbia, Letonia, Irlanda, Italia, España, Estados Unidos, México y Argentina.",
+    "olesia-lavrinenko": "Los temas místicos e irracionales están en el núcleo de mi práctica artística. En mis obras creo situaciones donde se cruzan las impresiones de un pasado medio olvidado, mal recordado o imaginado, momentos que existen en el frágil límite entre la memoria y la nostalgia. En ellas se entrelazan ideas del folclore, lo desconocido, la ciencia ficción y lo sobrenatural. Mi práctica explora las formas en que nuestros cuerpos físicos están entrelazados con el mundo digital, especialmente en el contexto de las rápidas transformaciones tecnológicas y sociales.",
+    "pasha-chibis": "Pasḧa Cḧibis creció en un entorno profundamente vinculado al arte. Desde temprana edad estuvo rodeado de artistas que eran amigos y colegas de su padre, cuyas experiencias e intercambios influyeron en su elección profesional y en la formación de su sensibilidad artística. Tras graduarse en 2006 como especialista en diseño de transporte, comenzó a desarrollar su carrera artística participando activamente en exposiciones en Moscú. Desde 2007 expuso regularmente en el Vernissage del Parque Gorky, uno de los espacios artísticos y turísticos más importantes de la ciudad.",
+    "polina-gomon": "Soy una artista viajera y siempre llevo conmigo un cuaderno en la mochiḷa. El trabajo en plein air es mi manera de establecer contacto con el entorno y de sumergirme en un proceso meditativo de creación que me brinda alegría y calma. Quiero compartir este instante del estar con mis espectadores, invitarlos a explorar y contemplar el mundo conmigo. La mayoría de las obras son de pequeño o mediano formato y están realizadas en pastel al óleo o tinta, los medios más adecuados para el trabajo al aire libre.",
+    "yuri-chursin": "Nació en Petropávlovsk-Kamcḧatski el 8 de diciembre de 1963. En 1986 se graduó de la Escuela de Arte de Krasnodar. Ha participado en exposiciones individuales y colectivas en Moscú, San Petersburgo y Alemania. Su obra 'El Baile de Matisse en Moscú' forma parte de la colección de la Galería de Arte Contemporáneo 'ERARTA' en San Petersburgo, y 'El Disparo' integra la colección de Kreissparkasse en Ludwigshḧafen, Alemania.",
+  },
+  en: {
+    "anastasiia-berezina": "Anastasia Berezina is a multidisciplinary artist exploring themes of identity, childhood and the search for one's place in the world. Her works frequently feature blue and white—colours of freedom and depth, linked to the experience of migration from Russia to Argentina. They become a visual bridge between past and present, between memory and new reality. Through street art, painting and participatory installations, she seeks to involve the viewer in dialogue and transform them from observer into participant in the artistic process.",
+    "kristina-kirilina": "The artist explores the perception of time and the fragmentary nature of memory. In her works, the past is presented not as a fixed fact but as transparent reflections and traces of light, in constant change and flight. In her practice, she works with diverse media—painting, relief, installation and luminous objects—exploring the interaction between material, form and light. She uses glass and techniques such as stained glass and bas-relief, creating works where each medium becomes an expression of the idea.",
+    "ksusha-miloslavskii": "Ksusha Miloslavskii is an interdisciplinary artist working in the field of contemporary art. Her practice focuses on exploring identity and visible manifestations of time through abstract collages, artistic objects and masks. She also works as a set designer. Her work is part of the collection of the Kovalenko Art Museum (Russia), as well as private collections in Russia, Ukraine, Serbia, Latvia, Ireland, Italy, Spain, the United States, Mexico and Argentina.",
+    "olesia-lavrinenko": "Mystical and irrational themes lie at the core of my artistic practice. In my works, I create situations where impressions of a half-forgotten, misremembered or imagined past intersect—moments existing on the fragile border between memory and nostalgia. In them, ideas of folklore, the unknown, science fiction and the supernatural intertwine. My practice explores the ways our physical bodies are interwoven with the digital world, especially in the context of rapid technological and social transformations.",
+    "pasha-chibis": "Pasha Chibis grew up in an environment deeply connected to art. From an early age he was surrounded by artists who were friends and colleagues of his father, whose experiences and exchanges influenced his professional choice and the formation of his artistic sensibility. After graduating in 2006 as a specialist in transport design, he began to develop his artistic career by actively participating in exhibitions in Moscow. Since 2007 he has exhibited regularly at the Gorky Park Vernissage, one of the city's most important artistic and tourist spaces.",
+    "polina-gomon": "I am a traveling artist and always carry a notebook in my backpack. Working en plein air is my way of establishing contact with the environment and immersing myself in a meditative creative process that brings me joy and calm. I want to share this moment of being with my viewers, invite them to explore and contemplate the world with me. Most works are small to medium format and realized in oil pastel or ink, the most suitable media for outdoor work.",
+    "yuri-chursin": "Born in Petropavlovsk-Kamchatsky on December 8, 1963. Graduated from the Krasnodar School of Art in 1986. He has participated in solo and group exhibitions in Moscow, St. Petersburg and Germany. His work 'Matisse's Dance in Moscow' is part of the collection of the ERARTA Contemporary Art Gallery in St. Petersburg, and 'The Shot' is part of the Kreissparkasse collection in Ludwigshḧafen, Germany.",
+  },
+  ru: {
+    "anastasiia-berezina": "Анастасия Березина — мультидисциплинарная художница. В своей практике она исследует темы идентичности, детства и поиска собственного места в мире. В её работах часто появляются синий и белый цвета — цвета свободы и глубины, связанные с опытом миграции из России в Аргентину. Они становятся визуальным мостом между прошлым и настоящим, между памятью и новой реальностью. Через уличное искусство, живопись и участвующие инсталляции художница стремится вовлечь зрителя в диалог и превратить его из наблюдателя в участника художественного процесса.",
+    "kristina-kirilina": "Художница исследует восприятие времени и фрагментарную природу памяти. В её работах прошлое представлено не как фиксированный факт, а как прозрачные отражения и следы света, находящиеся в постоянном изменении и бегстве. В своей практике она работает с разными медиа — живопись, рельеф, инсталляция и светолюминесцентные объекты — исследуя взаимодействие материала, формы и света. Она использует стекло и техники вроде витража и барельефа, создавая работы, где каждый медиум становится выражением идеи.",
+    "ksusha-miloslavskii": "Ксуша Милославская — интердисциплинарная художница, работающая в области современного искусства. Её практика сосредоточена на исследовании идентичности и видимых проявлений времени через абстрактные коллажи, художественные объекты и маски. Параллельно работает как сценографистка. Её произведения входят в собрание Музея искусства Коваленко (Россия), а также в частные коллекции в России, Украине, Сербии, Латвии, Ирландии, Италии, Испании, США, Мексике и Аргентине.",
+    "olesia-lavrinenko": "Мистические и иррациональные темы лежат в ядре моей художественной практики. В моих работах я создаю ситуации, где пересекаются впечатления полузабытого, неправильно помняемого или воображаемого прошлого — моменты, существующие на хрупкой границе между памятью и ностальгией. В них переплетаются идеи фольклора, неизвестного, научной фантастики и сверхъестественного. Моя практика исследует способы, в которых наши физические тела переплетены с цифровым миром, особенно в контексте быстрых технологических и социальных трансформаций.",
+    "pasha-chibis": "Паша Чибис вырос в среде, глубоко связанной с искусством. С раннего возраста он был окружён художниками, которые были друзьями и коллегами его отца, чьи опыт и обмены влияли на его профессиональный выбор и формирование его художественной чувствительности. После окончания в 2006 году специализации по дизайну транспорта он начал развивать свою художественную карьеру, активно участвуя в выставках в Москве. С 2007 года он регулярно выставляется на Ярмарке в парке Горького, одном из самых важных художественных и туристических пространств города.",
+    "polina-gomon": "Я — путешествующая художница и всегда ношу с собой блокнот в рюкзаке. Работа пленэром — это мой способ установить контакт с окружением и погрузиться в медитативный творческий процесс, который дарует мне радость и спокойствие. Я хочу поделиться этим мгновением бытия со своими зрителями, пригласить их исследовать и созерцать мир вместе со мной. Большинство работ — малого или среднего формата, выполнены масляной пастелью или тушью, наиболее подходящими медиумами для работы на воздухе.",
+    "yuri-chursin": "Родился в Петропавловске-Камчатском 8 декабря 1963 года. В 1986 году окончил Краснодарскую школу искусств. Участвовал в персональных и коллективных выставках в Москве, Санкт-Петербурге и Германии. Его работа 'Танец Матисса в Москве' входит в собрание Галереи современного искусства 'ERARTA' в Санкт-Петербурге, а 'Выстрел' — в собрание Kreissparkasse в Людвигсхḧафене, Германия.",
+  },
 };
 
 const statementTemplates = {
-  es: "Trabajo con lo que queda entre dos lugares: una niebla que no es ni salida ni llegada. Me interesa el momento en que una imagen todavía no decidió qué va a recordar.",
-  en: "I work with what remains between two places: a fog that is neither departure nor arrival. I am interested in the moment when an image has not yet decided what it will remember.",
-  ru: "Я работаю с тем, что остаётся между двумя местами: с туманом, который не является ни отъездом, ни прибытием. Меня интересует момент, когда изображение ещё не решило, что именно оно запомнит.",
+  es: {
+    "anastasiia-berezina": "A través de mis obras busco conectar con el espectador desde la infancia, invitarlos a recordar ese estado de inocencia y libertad. El arte es para mí un puente entre lo conocido y lo desconocido.",
+    "kristina-kirilina": "La memoria no es una suma de hechos, sino una trama de luces y sombras. Busco capturar esos instantes efímeros donde el pasado y el presente convergen.",
+    "ksusha-miloslavskii": "Mi práctica trata de cómo nos vemos y cómo somos vistos. La identidad es un collage, un tejido frágil de fragmentos que se recombinan constantemente.",
+    "olesia-lavrinenko": "Trabajo en el espacio entre lo racional y lo irracional, entre lo que recordamos y lo que imaginamos. La vida contemporánea está saturada de datos; mis obras intentan recuperar lo que se pierde en esa saturación.",
+    "pasha-chibis": "La pintura es mi forma de dialogar con el mundo. Cada color, cada gesto, es una conversación silenciosa sobre cómo habitamos los espacios.",
+    "polina-gomon": "Dibujar al aire libre es un acto de intimidad con el lugar. No intento dominar el paisaje, sino escucharlo, permitir que hable a través de mi mano.",
+    "yuri-chursin": "Mi trabajo explora la fricción entre la tradición y la experimentación. Cada obra es un ensayo sobre cómo la materia puede contener emoción.",
+  },
+  en: {
+    "anastasiia-berezina": "Through my works I seek to connect with the viewer from childhood, inviting them to remember that state of innocence and freedom. Art is for me a bridge between the known and the unknown.",
+    "kristina-kirilina": "Memory is not a sum of facts, but a web of lights and shadows. I seek to capture those fleeting moments where past and present converge.",
+    "ksusha-miloslavskii": "My practice deals with how we see ourselves and how we are seen. Identity is a collage, a fragile fabric of fragments that constantly recombine.",
+    "olesia-lavrinenko": "I work in the space between the rational and the irrational, between what we remember and what we imagine. Contemporary life is saturated with data; my works attempt to recover what is lost in that saturation.",
+    "pasha-chibis": "Painting is my way of dialoguing with the world. Each color, each gesture, is a silent conversation about how we inhabit spaces.",
+    "polina-gomon": "Drawing in the open air is an act of intimacy with place. I do not try to master the landscape, but to listen to it, to allow it to speak through my hand.",
+    "yuri-chursin": "My work explores the friction between tradition and experimentation. Each work is an essay on how matter can contain emotion.",
+  },
+  ru: {
+    "anastasiia-berezina": "Через мои работы я стремлюсь соединиться со зрителем из детства, приглашая их вспомнить то состояние невинности и свободы. Для меня искусство — это мост между известным и неизвестным.",
+    "kristina-kirilina": "Память — это не сумма фактов, а сплетение света и теней. Я стремлюсь уловить те мимолётные моменты, где прошлое и настоящее сходятся.",
+    "ksusha-miloslavskii": "Моя практика — о том, как мы видим себя и как нас видят другие. Идентичность — это коллаж, хрупкая ткань фрагментов, которые постоянно пересоединяются.",
+    "olesia-lavrinenko": "Я работаю в пространстве между рациональным и иррациональным, между тем, что мы помним, и тем, что мы воображаем. Современная жизнь насыщена данными; мои работы пытаются восстановить то, что теряется в этой насыщенности.",
+    "pasha-chibis": "Живопись — мой способ диалога с миром. Каждый цвет, каждый жест — это молчаливый разговор о том, как мы обитаем пространства.",
+    "polina-gomon": "Рисовать на воздухе — это акт интимности с местом. Я не пытаюсь господствовать над пейзажем, а слушать его, позволяя ему говорить через мою руку.",
+    "yuri-chursin": "Моя работа исследует трение между традицией и экспериментом. Каждая работа — это эссе о том, как материя может содержать эмоцию.",
+  },
 };
 
 const shortTemplates = {
-  es: "Práctica situada entre archivo, migración y memoria material.",
-  en: "A practice situated between archive, migration and material memory.",
-  ru: "Практика между архивом, миграцией и материальной памятью.",
+  es: {
+    "anastasiia-berezina": "Artista multidisciplinaria explorando identidad e infancia.",
+    "kristina-kirilina": "Investigando la percepción del tiempo y fragmentos de memoria.",
+    "ksusha-miloslavskii": "Collages abstractos y exploración de identidad y tiempo.",
+    "olesia-lavrinenko": "Temas místicos entre pasado, memoria y mundo digital.",
+    "pasha-chibis": "Pintor que explora el diálogo entre color y espacio.",
+    "polina-gomon": "Artista de plein air trabajando con tinta y observación directa.",
+    "yuri-chursin": "Pintor experimentando con tradición y nuevos materiales.",
+  },
+  en: {
+    "anastasiia-berezina": "Multidisciplinary artist exploring identity and childhood.",
+    "kristina-kirilina": "Investigating time perception and fragments of memory.",
+    "ksusha-miloslavskii": "Abstract collages exploring identity and the passage of time.",
+    "olesia-lavrinenko": "Mystical themes between past, memory and the digital world.",
+    "pasha-chibis": "Painter exploring dialogue between color and space.",
+    "polina-gomon": "Plein air artist working with ink and direct observation.",
+    "yuri-chursin": "Painter experimenting with tradition and new materials.",
+  },
+  ru: {
+    "anastasiia-berezina": "Мультидисциплинарная художница, исследующая идентичность и детство.",
+    "kristina-kirilina": "Исследует восприятие времени и фрагменты памяти.",
+    "ksusha-miloslavskii": "Абстрактные коллажи, исследование идентичности и времени.",
+    "olesia-lavrinenko": "Мистические темы между прошлым, памятью и цифровым миром.",
+    "pasha-chibis": "Художник, исследующий диалог между цветом и пространством.",
+    "polina-gomon": "Художница пленэра, работает с тушью и прямым наблюдением.",
+    "yuri-chursin": "Художник, экспериментирующий с традицией и новыми материалами.",
+  },
 };
 
 export const artists: Artist[] = seeds.map((s, i) => ({
@@ -166,12 +186,24 @@ export const artists: Artist[] = seeds.map((s, i) => ({
   city: { es: s.city[0], en: s.city[1], ru: s.city[2] },
   practice: { es: s.practice[0], en: s.practice[1], ru: s.practice[2] },
   media: { es: s.media[0], en: s.media[1], ru: s.media[2] },
-  website: `https://example.org/${s.id}`,
-  instagram: `@${s.id.replace(/-/g, ".")}`,
+  website: undefined,
+  instagram: undefined,
   portrait: portraits[i % portraits.length]!,
-  short: shortTemplates,
-  bio: { es: bioTemplates.es(s), en: bioTemplates.en(s), ru: bioTemplates.ru(s) },
-  statement: statementTemplates,
+  short: { 
+    es: shortTemplates.es[s.id as keyof typeof shortTemplates.es], 
+    en: shortTemplates.en[s.id as keyof typeof shortTemplates.en], 
+    ru: shortTemplates.ru[s.id as keyof typeof shortTemplates.ru] 
+  },
+  bio: { 
+    es: bioTemplates.es[s.id as keyof typeof bioTemplates.es], 
+    en: bioTemplates.en[s.id as keyof typeof bioTemplates.en], 
+    ru: bioTemplates.ru[s.id as keyof typeof bioTemplates.ru] 
+  },
+  statement: { 
+    es: statementTemplates.es[s.id as keyof typeof statementTemplates.es], 
+    en: statementTemplates.en[s.id as keyof typeof statementTemplates.en], 
+    ru: statementTemplates.ru[s.id as keyof typeof statementTemplates.ru] 
+  },
 }));
 
 const workTitles = [
