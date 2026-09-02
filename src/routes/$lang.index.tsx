@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
 import { IMAGES, artists, projects } from "@/content";
-import { dict, t, type Lang } from "@/lib/i18n";
+import { dict, type Lang } from "@/lib/i18n";
 import { localizedHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/$lang/")({
@@ -14,10 +14,34 @@ export const Route = createFileRoute("/$lang/")({
   component: HomePage,
 });
 
-const mission = {
-  es: "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas de Europa del Este. Exploramos el estado de estar entre: entre el pasado y el presente, la memoria y la experiencia nueva, lo conocido y lo desconocido. Lo que quedó atrás no desaparece: sigue existiendo en las imágenes, los gestos, el lenguaje, las huellas digitales y la memoria personal, entrando en diálogo con el nuevo territorio. Bruma nace de este estado de incertidumbre como un espacio donde la identidad no es algo fijo, sino un proceso que se forma, cambia y se reconstruye constantemente. Nuestra misión es crear un espacio para el arte contemporáneo donde los artistas puedan explorar estos procesos, compartir experiencias y generar nuevos vínculos entre personas, culturas, prácticas artísticas y contextos. Estamos abiertos a colaborar con artistas, curadores, instituciones culturales, investigadores y otras iniciativas que compartan nuestros valores.",
-  en: "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation, created by a collective of seven artists from Eastern Europe. We explore the experience of being in-between — between past and present, memory and new experience, the familiar and the unknown. What has been left behind does not disappear: it continues to exist through images, gestures, language, digital traces, and personal memory, entering into dialogue with a new territory. Bruma emerges from this state of uncertainty as a space where identity is not fixed, but constantly formed, transformed, and reconstructed. Our mission is to create a space for contemporary art where artists can explore these processes, exchange experiences, and build new connections between people, cultures, artistic practices, and contexts. We are open to collaborations with artists, curators, cultural institutions, researchers, and other initiatives that share our values.",
-  ru: "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации, созданный объединением из семи художников из Восточной Европы. Мы исследуем состояние между — между прошлым и настоящим, памятью и новым опытом, знакомым и неизвестным. То, что осталось позади, не исчезает: оно продолжает существовать в образах, жестах, языке, цифровых следах и личной памяти, вступая в диалог с новым местом. Bruma возникает из этого состояния неопределённости — как пространство, где идентичность не является чем-то фиксированным, а постоянно формируется, меняется и пересобирается. Наша миссия — создавать пространство для современного искусства, в котором художники могут исследовать эти процессы, обмениваться опытом и создавать новые связи — между людьми, культурами, художественными практиками и контекстами. Мы открыты к сотрудничеству с художниками, кураторами, культурными институциями, исследователями и другими инициативами, которым близки наши ценности.",
+const about = {
+  es: {
+    heading: "Sobre Bruma",
+    lead: "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas eslavos.",
+    body: [
+      "Exploramos el estado de estar entre: entre el pasado y el presente, la memoria y la experiencia nueva, lo conocido y lo desconocido. Lo que quedó atrás no desaparece: sigue existiendo en las imágenes, los gestos, el lenguaje, las huellas digitales y la memoria personal, entrando en diálogo con el nuevo territorio. Bruma nace de este estado de incertidumbre como un espacio donde la identidad no es algo fijo, sino un proceso que se forma, cambia y se reconstruye constantemente.",
+      "Nuestra misión es crear un espacio para el arte contemporáneo donde los artistas puedan explorar estos procesos, compartir experiencias y generar nuevos vínculos entre personas, culturas, prácticas artísticas y contextos.",
+      "Estamos abiertos a colaborar con artistas, curadores, instituciones culturales, investigadores y otras iniciativas que compartan nuestros valores.",
+    ],
+  },
+  en: {
+    heading: "About Bruma",
+    lead: "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation, created by a collective of seven Slavic artists.",
+    body: [
+      "We explore the experience of being in-between — between past and present, memory and new experience, the familiar and the unknown. What has been left behind does not disappear: it continues to exist through images, gestures, language, digital traces, and personal memory, entering into dialogue with a new territory. Bruma emerges from this state of uncertainty as a space where identity is not fixed, but constantly formed, transformed, and reconstructed.",
+      "Our mission is to create a space for contemporary art where artists can explore these processes, exchange experiences, and build new connections between people, cultures, artistic practices, and contexts.",
+      "We are open to collaborations with artists, curators, cultural institutions, researchers, and other initiatives that share our values.",
+    ],
+  },
+  ru: {
+    heading: "О Bruma",
+    lead: "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации, созданный объединением из семи художников из Восточной Европы.",
+    body: [
+      "Мы исследуем состояние между — между прошлым и настоящим, памятью и новым опытом, знакомым и неизвестным. То, что осталось позади, не исчезает: оно продолжает существовать в образах, жестах, языке, цифровых следах и личной памяти, вступая в диалог с новым местом. Bruma возникает из этого состояния неопределённости — как пространство, где идентичность не является чем-то фиксированным, а постоянно формируется, меняется и пересобирается.",
+      "Наша миссия — создавать пространство для современного искусства, в котором художники могут исследовать эти процессы, обмениваться опытом и создавать новые связи — между людьми, культурами, художественными практиками и контекстами.",
+      "Мы открыты к сотрудничеству с художниками, кураторами, культурными институциями, исследователями и другими инициативами, которым близки наши ценности.",
+    ],
+  },
 };
 
 const activities = [
@@ -72,6 +96,7 @@ function HomePage() {
   const { lang } = Route.useParams();
   const l = lang as Lang;
   const d = dict[l] ?? dict.es;
+  const a = about[l] ?? about.es;
   const featured = artists.slice(0, 6);
   const recent = projects.slice(0, 3);
 
@@ -99,8 +124,15 @@ function HomePage() {
 
       <Reveal as="section" className="mx-auto max-w-[1600px] px-5 py-24 md:px-10">
         <div className="grid gap-10 md:grid-cols-12">
-          <h2 className="label md:col-span-3">{d.nav.about}</h2>
-          <p className="text-2xl leading-snug tracking-tight md:col-span-9 md:text-4xl">{t(mission, l)}</p>
+          <h2 className="label md:col-span-3">{a.heading}</h2>
+          <div className="md:col-span-9">
+            <p className="text-2xl leading-snug tracking-tight md:text-4xl">{a.lead}</p>
+            {a.body.map((para, i) => (
+              <p key={i} className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">
+                {para}
+              </p>
+            ))}
+          </div>
         </div>
       </Reveal>
 
@@ -108,8 +140,8 @@ function HomePage() {
         <ul className="grid gap-px border-t border-border">
           {activities.map((a) => (
             <Reveal as="li" key={a.key} className="grid gap-4 border-b border-border py-8 md:grid-cols-12">
-              <h3 className="label md:col-span-3">{t(a.title, l)}</h3>
-              <p className="max-w-2xl text-base text-muted-foreground md:col-span-9">{t(a.body, l)}</p>
+              <h3 className="label md:col-span-3">{a.title[l]}</h3>
+              <p className="max-w-2xl text-base text-muted-foreground md:col-span-9">{a.body[l]}</p>
             </Reveal>
           ))}
         </ul>
@@ -169,7 +201,7 @@ function HomePage() {
                   />
                 </div>
                 <h3 className="mt-3 text-xl tracking-tight">{p.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{t(p.location, l)}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{p.location[l]}</p>
               </Link>
             </li>
           ))}
