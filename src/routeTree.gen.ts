@@ -12,8 +12,14 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as LangIndexRouteImport } from './routes/$lang.index'
+import { Route as LangContactRouteImport } from './routes/$lang.contact'
+import { Route as LangPressRouteImport } from './routes/$lang.press'
 import { Route as LangArtistsIndexRouteImport } from './routes/$lang.artists.index'
 import { Route as LangArtistsArtistIdRouteImport } from './routes/$lang.artists.$artistId'
+import { Route as LangProjectsIndexRouteImport } from './routes/$lang.projects.index'
+import { Route as LangProjectsProjectIdRouteImport } from './routes/$lang.projects.$projectId'
+import { Route as LangPublicationsIndexRouteImport } from './routes/$lang.publications.index'
+import { Route as LangPublicationsPublicationIdRouteImport } from './routes/$lang.publications.$publicationId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -30,6 +36,16 @@ const LangIndexRoute = LangIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LangRoute,
 } as any)
+const LangContactRoute = LangContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangPressRoute = LangPressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangArtistsIndexRoute = LangArtistsIndexRouteImport.update({
   id: '/artists/',
   path: '/artists/',
@@ -40,41 +56,106 @@ const LangArtistsArtistIdRoute = LangArtistsArtistIdRouteImport.update({
   path: '/artists/$artistId',
   getParentRoute: () => LangRoute,
 } as any)
+const LangProjectsIndexRoute = LangProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangProjectsProjectIdRoute = LangProjectsProjectIdRouteImport.update({
+  id: '/projects/$projectId',
+  path: '/projects/$projectId',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangPublicationsIndexRoute = LangPublicationsIndexRouteImport.update({
+  id: '/publications/',
+  path: '/publications/',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangPublicationsPublicationIdRoute =
+  LangPublicationsPublicationIdRouteImport.update({
+    id: '/publications/$publicationId',
+    path: '/publications/$publicationId',
+    getParentRoute: () => LangRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/press': typeof LangPressRoute
   '/$lang/': typeof LangIndexRoute
   '/$lang/artists/$artistId': typeof LangArtistsArtistIdRoute
+  '/$lang/projects/$projectId': typeof LangProjectsProjectIdRoute
+  '/$lang/publications/$publicationId': typeof LangPublicationsPublicationIdRoute
   '/$lang/artists/': typeof LangArtistsIndexRoute
+  '/$lang/projects/': typeof LangProjectsIndexRoute
+  '/$lang/publications/': typeof LangPublicationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/press': typeof LangPressRoute
   '/$lang': typeof LangIndexRoute
   '/$lang/artists/$artistId': typeof LangArtistsArtistIdRoute
+  '/$lang/projects/$projectId': typeof LangProjectsProjectIdRoute
+  '/$lang/publications/$publicationId': typeof LangPublicationsPublicationIdRoute
   '/$lang/artists': typeof LangArtistsIndexRoute
+  '/$lang/projects': typeof LangProjectsIndexRoute
+  '/$lang/publications': typeof LangPublicationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
+  '/$lang/contact': typeof LangContactRoute
+  '/$lang/press': typeof LangPressRoute
   '/$lang/': typeof LangIndexRoute
   '/$lang/artists/$artistId': typeof LangArtistsArtistIdRoute
+  '/$lang/projects/$projectId': typeof LangProjectsProjectIdRoute
+  '/$lang/publications/$publicationId': typeof LangPublicationsPublicationIdRoute
   '/$lang/artists/': typeof LangArtistsIndexRoute
+  '/$lang/projects/': typeof LangProjectsIndexRoute
+  '/$lang/publications/': typeof LangPublicationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/$lang' | '/$lang/' | '/$lang/artists/$artistId' | '/$lang/artists/'
+    | '/'
+    | '/$lang'
+    | '/$lang/contact'
+    | '/$lang/press'
+    | '/$lang/'
+    | '/$lang/artists/$artistId'
+    | '/$lang/projects/$projectId'
+    | '/$lang/publications/$publicationId'
+    | '/$lang/artists/'
+    | '/$lang/projects/'
+    | '/$lang/publications/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$lang' | '/$lang/artists/$artistId' | '/$lang/artists'
+  to:
+    | '/'
+    | '/$lang/contact'
+    | '/$lang/press'
+    | '/$lang'
+    | '/$lang/artists/$artistId'
+    | '/$lang/projects/$projectId'
+    | '/$lang/publications/$publicationId'
+    | '/$lang/artists'
+    | '/$lang/projects'
+    | '/$lang/publications'
   id:
     | '__root__'
     | '/'
     | '/$lang'
+    | '/$lang/contact'
+    | '/$lang/press'
     | '/$lang/'
     | '/$lang/artists/$artistId'
+    | '/$lang/projects/$projectId'
+    | '/$lang/publications/$publicationId'
     | '/$lang/artists/'
+    | '/$lang/projects/'
+    | '/$lang/publications/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,6 +186,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangIndexRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/contact': {
+      id: '/$lang/contact'
+      path: '/contact'
+      fullPath: '/$lang/contact'
+      preLoaderRoute: typeof LangContactRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/press': {
+      id: '/$lang/press'
+      path: '/press'
+      fullPath: '/$lang/press'
+      preLoaderRoute: typeof LangPressRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/artists/': {
       id: '/$lang/artists/'
       path: '/artists'
@@ -119,19 +214,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangArtistsArtistIdRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/projects/': {
+      id: '/$lang/projects/'
+      path: '/projects'
+      fullPath: '/$lang/projects/'
+      preLoaderRoute: typeof LangProjectsIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/projects/$projectId': {
+      id: '/$lang/projects/$projectId'
+      path: '/projects/$projectId'
+      fullPath: '/$lang/projects/$projectId'
+      preLoaderRoute: typeof LangProjectsProjectIdRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/publications/': {
+      id: '/$lang/publications/'
+      path: '/publications'
+      fullPath: '/$lang/publications/'
+      preLoaderRoute: typeof LangPublicationsIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/publications/$publicationId': {
+      id: '/$lang/publications/$publicationId'
+      path: '/publications/$publicationId'
+      fullPath: '/$lang/publications/$publicationId'
+      preLoaderRoute: typeof LangPublicationsPublicationIdRouteImport
+      parentRoute: typeof LangRoute
+    }
   }
 }
 
 interface LangRouteChildren {
+  LangContactRoute: typeof LangContactRoute
+  LangPressRoute: typeof LangPressRoute
   LangIndexRoute: typeof LangIndexRoute
   LangArtistsArtistIdRoute: typeof LangArtistsArtistIdRoute
+  LangProjectsProjectIdRoute: typeof LangProjectsProjectIdRoute
+  LangPublicationsPublicationIdRoute: typeof LangPublicationsPublicationIdRoute
   LangArtistsIndexRoute: typeof LangArtistsIndexRoute
+  LangProjectsIndexRoute: typeof LangProjectsIndexRoute
+  LangPublicationsIndexRoute: typeof LangPublicationsIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
+  LangContactRoute: LangContactRoute,
+  LangPressRoute: LangPressRoute,
   LangIndexRoute: LangIndexRoute,
   LangArtistsArtistIdRoute: LangArtistsArtistIdRoute,
+  LangProjectsProjectIdRoute: LangProjectsProjectIdRoute,
+  LangPublicationsPublicationIdRoute: LangPublicationsPublicationIdRoute,
   LangArtistsIndexRoute: LangArtistsIndexRoute,
+  LangProjectsIndexRoute: LangProjectsIndexRoute,
+  LangPublicationsIndexRoute: LangPublicationsIndexRoute,
 }
 
 const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
