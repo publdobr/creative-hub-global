@@ -133,7 +133,7 @@ export const dict: Record<Lang, Dict> = {
       home: {
         title: "Foundation Bruma — arte contemporáneo y archivo vivo",
         description:
-          "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas de Europa del Este.",
+          "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas eslavos.",
       },
       artists: {
         title: "Artistas — Foundation Bruma",
