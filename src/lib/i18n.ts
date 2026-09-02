@@ -133,7 +133,7 @@ export const dict: Record<Lang, Dict> = {
       home: {
         title: "Foundation Bruma — arte contemporáneo y archivo vivo",
         description:
-          "Foundation Bruma reúne artistas de Europa del Este para quienes Argentina se volvió un espacio de transformación: exhibiciones, investigación y publicaciones.",
+          "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas de Europa del Este.",
       },
       artists: {
         title: "Artistas — Foundation Bruma",
@@ -219,7 +219,7 @@ export const dict: Record<Lang, Dict> = {
       home: {
         title: "Foundation Bruma — contemporary art and living archive",
         description:
-          "Foundation Bruma brings together artists from Eastern Europe for whom Argentina became a space of transformation: exhibitions, research and publications.",
+          "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation, created by a collective of seven artists from Eastern Europe.",
       },
       artists: {
         title: "Artists — Foundation Bruma",
@@ -305,7 +305,7 @@ export const dict: Record<Lang, Dict> = {
       home: {
         title: "Foundation Bruma — современное искусство и живой архив",
         description:
-          "Foundation Bruma объединяет художников из Восточной Европы, для которых Аргентина стала пространством трансформации: выставки, исследования, публикации.",
+          "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации, созданный объединением из семи художников из Восточной Европы.",
       },
       artists: {
         title: "Художники — Foundation Bruma",
@@ -333,11 +333,11 @@ export const dict: Record<Lang, Dict> = {
 
 export const CONTACT_INFO = {
   email: "hola@foundationbruma.org",
-  instagram: "@foundation.bruma",
-  instagramUrl: "https://instagram.com/",
+  instagram: "@bruma_fundacion",
+  instagramUrl: "https://www.instagram.com/bruma_fundacion/",
   location: {
-    es: "Buenos Aires, Argentina — Villa Crespo, Av. Corrientes 5400",
-    en: "Buenos Aires, Argentina — Villa Crespo, Av. Corrientes 5400",
-    ru: "Буэнос-Айрес, Аргентина — Вилья-Креспо, Av. Corrientes 5400",
+    es: "Buenos Aires, Argentina",
+    en: "Buenos Aires, Argentina",
+    ru: "Буэнос-Айрес, Аргентина",
   } satisfies LocalizedText,
 };
