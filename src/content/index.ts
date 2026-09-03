@@ -186,8 +186,6 @@ export const artists: Artist[] = seeds.map((s, i) => ({
   city: { es: s.city[0], en: s.city[1], ru: s.city[2] },
   practice: { es: s.practice[0], en: s.practice[1], ru: s.practice[2] },
   media: { es: s.media[0], en: s.media[1], ru: s.media[2] },
-  website: undefined,
-  instagram: undefined,
   portrait: portraits[i % portraits.length]!,
   short: { 
     es: shortTemplates.es[s.id as keyof typeof shortTemplates.es], 

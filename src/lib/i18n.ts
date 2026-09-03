@@ -36,6 +36,7 @@ type Dict = {
     close: string;
     language: string;
     readMore: string;
+    learnMore: string;
     externalLink: string;
     downloadCatalog: string;
     relatedProjects: string;
@@ -65,7 +66,7 @@ type Dict = {
     collaboration: string;
   };
   meta: Record<
-    "home" | "artists" | "projects" | "publications" | "press" | "contact",
+    "home" | "about" | "artists" | "projects" | "publications" | "press" | "contact",
     { title: string; description: string }
   >;
 };
@@ -94,6 +95,7 @@ export const dict: Record<Lang, Dict> = {
       close: "Cerrar",
       language: "Idioma",
       readMore: "Leer más",
+      learnMore: "Conocer más",
       externalLink: "Ver publicación",
       downloadCatalog: "Descargar catálogo",
       relatedProjects: "Proyectos relacionados",
@@ -134,6 +136,11 @@ export const dict: Record<Lang, Dict> = {
         title: "Foundation Bruma — arte contemporáneo y archivo vivo",
         description:
           "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación, creada por un colectivo de siete artistas eslavos.",
+      },
+      about: {
+        title: "Sobre la fundación — Foundation Bruma",
+        description:
+          "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación.",
       },
       artists: {
         title: "Artistas — Foundation Bruma",
@@ -180,6 +187,7 @@ export const dict: Record<Lang, Dict> = {
       close: "Close",
       language: "Language",
       readMore: "Read more",
+      learnMore: "Learn more",
       externalLink: "Read the article",
       downloadCatalog: "Download catalogue",
       relatedProjects: "Related projects",
@@ -220,6 +228,11 @@ export const dict: Record<Lang, Dict> = {
         title: "Foundation Bruma — contemporary art and living archive",
         description:
           "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation, created by a collective of seven artists from Eastern Europe.",
+      },
+      about: {
+        title: "About — Foundation Bruma",
+        description:
+          "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation.",
       },
       artists: {
         title: "Artists — Foundation Bruma",
@@ -266,6 +279,7 @@ export const dict: Record<Lang, Dict> = {
       close: "Закрыть",
       language: "Язык",
       readMore: "Читать",
+      learnMore: "Узнать подробнее",
       externalLink: "Читать материал",
       downloadCatalog: "Скачать каталог",
       relatedProjects: "Связанные проекты",
@@ -306,6 +320,11 @@ export const dict: Record<Lang, Dict> = {
         title: "Foundation Bruma — современное искусство и живой архив",
         description:
           "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации, созданный объединением из семи художников из Восточной Европы.",
+      },
+      about: {
+        title: "О фонде — Foundation Bruma",
+        description:
+          "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации.",
       },
       artists: {
         title: "Художники — Foundation Bruma",
