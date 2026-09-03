@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
 import { IMAGES, artists, projects } from "@/content";
-import { about } from "@/content/about";
+import { about, activities } from "@/content/about";
 import { dict, type Lang } from "@/lib/i18n";
 import { localizedHead } from "@/lib/seo";
 
