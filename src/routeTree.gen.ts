@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as LangIndexRouteImport } from './routes/$lang.index'
+import { Route as LangAboutRouteImport } from './routes/$lang.about'
 import { Route as LangContactRouteImport } from './routes/$lang.contact'
 import { Route as LangPressRouteImport } from './routes/$lang.press'
 import { Route as LangArtistsIndexRouteImport } from './routes/$lang.artists.index'
@@ -34,6 +35,11 @@ const LangRoute = LangRouteImport.update({
 const LangIndexRoute = LangIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangAboutRoute = LangAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => LangRoute,
 } as any)
 const LangContactRoute = LangContactRouteImport.update({
@@ -81,6 +87,7 @@ const LangPublicationsPublicationIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
+  '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/press': typeof LangPressRoute
   '/$lang/': typeof LangIndexRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/press': typeof LangPressRoute
   '/$lang': typeof LangIndexRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
+  '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/press': typeof LangPressRoute
   '/$lang/': typeof LangIndexRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$lang'
+    | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/press'
     | '/$lang/'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/press'
     | '/$lang'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$lang'
+    | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/press'
     | '/$lang/'
@@ -184,6 +196,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/$lang/'
       preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/about': {
+      id: '/$lang/about'
+      path: '/about'
+      fullPath: '/$lang/about'
+      preLoaderRoute: typeof LangAboutRouteImport
       parentRoute: typeof LangRoute
     }
     '/$lang/contact': {
@@ -246,6 +265,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface LangRouteChildren {
+  LangAboutRoute: typeof LangAboutRoute
   LangContactRoute: typeof LangContactRoute
   LangPressRoute: typeof LangPressRoute
   LangIndexRoute: typeof LangIndexRoute
@@ -258,6 +278,7 @@ interface LangRouteChildren {
 }
 
 const LangRouteChildren: LangRouteChildren = {
+  LangAboutRoute: LangAboutRoute,
   LangContactRoute: LangContactRoute,
   LangPressRoute: LangPressRoute,
   LangIndexRoute: LangIndexRoute,
