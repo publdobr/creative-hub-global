@@ -3,8 +3,8 @@ import type { Lang } from "@/lib/i18n";
 export const about: Record<Lang, { heading: string; lead: string; leadRest: string; body: string[] }> = {
   es: {
     heading: "Sobre la fundación",
-    lead: "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación",
-    leadRest: ", creada por un colectivo de siete artistas eslavos.",
+    lead: "Bruma es una fundación de apoyo a artistas para quienes Argentina se ha convertido en un nuevo hogar y un espacio de transformación.",
+    leadRest: "",
     body: [
       "**Exploramos el estado de estar entre:** entre el pasado y el presente, la memoria y la experiencia nueva, lo conocido y lo desconocido. Lo que quedó atrás no desaparece: sigue existiendo en las imágenes, los gestos, el lenguaje, las huellas digitales y la memoria personal, entrando en diálogo con el nuevo territorio. Bruma nace de este estado de incertidumbre como un espacio donde la identidad no es algo fijo, sino un proceso que se forma, cambia y se reconstruye constantemente.",
       "**Nuestra misión es** crear un espacio para el arte contemporáneo donde los artistas puedan explorar estos procesos, compartir experiencias y generar nuevos vínculos entre personas, culturas, prácticas artísticas y contextos.",
@@ -13,8 +13,8 @@ export const about: Record<Lang, { heading: string; lead: string; leadRest: stri
   },
   en: {
     heading: "About the foundation",
-    lead: "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation",
-    leadRest: ", created by a collective of seven Slavic artists.",
+    lead: "Bruma is a foundation supporting artists for whom Argentina has become a new home and a space of transformation.",
+    leadRest: "",
     body: [
       "**We explore the experience of being in-between** — between past and present, memory and new experience, the familiar and the unknown. What has been left behind does not disappear: it continues to exist through images, gestures, language, digital traces, and personal memory, entering into dialogue with a new territory. Bruma emerges from this state of uncertainty as a space where identity is not fixed, but constantly formed, transformed, and reconstructed.",
       "**Our mission is** to create a space for contemporary art where artists can explore these processes, exchange experiences, and build new connections between people, cultures, artistic practices, and contexts.",
@@ -23,8 +23,8 @@ export const about: Record<Lang, { heading: string; lead: string; leadRest: stri
   },
   ru: {
     heading: "О фонде",
-    lead: "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации",
-    leadRest: ", созданный объединением из семи художников из Восточной Европы.",
+    lead: "Bruma — фонд поддержки художников, для которых Аргентина стала новым домом и пространством трансформации.",
+    leadRest: "",
     body: [
       "**Мы исследуем состояние между** — между прошлым и настоящим, памятью и новым опытом, знакомым и неизвестным. То, что осталось позади, не исчезает: оно продолжает существовать в образах, жестах, языке, цифровых следах и личной памяти, вступая в диалог с новым местом. Bruma возникает из этого состояния неопределённости — как пространство, где идентичность не является чем-то фиксированным, а постоянно формируется, меняется и пересобирается.",
       "**Наша миссия —** создавать пространство для современного искусства, в котором художники могут исследовать эти процессы, обмениваться опытом и создавать новые связи — между людьми, культурами, художественными практиками и контекстами.",
