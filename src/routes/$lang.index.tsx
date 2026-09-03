@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/Reveal";
 import { IMAGES, artists, projects } from "@/content";
-import { dict, type Lang } from "@/lib/i18n";
+import { dict, type Lang, CONTACT_INFO, t } from "@/lib/i18n";
 import { localizedHead } from "@/lib/seo";
 
 // Функция для парсинга **bold** текста
@@ -149,6 +149,26 @@ function HomePage() {
                 {renderText(para)}
               </p>
             ))}
+
+            {/* Contacts block on About page */}
+            <div className="mt-10">
+              <h2 className="display mt-8 text-4xl md:text-6xl">{d.nav.contact}</h2>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{d.contact.collaboration}</p>
+
+              <ul className="mt-6 border-t border-border max-w-3xl">
+                <li className="border-b border-border py-3">
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="hover-underline text-lg">
+                    {CONTACT_INFO.email}
+                  </a>
+                </li>
+                <li className="border-b border-border py-3">
+                  <a href={CONTACT_INFO.instagramUrl} target="_blank" rel="noreferrer noopener" className="hover-underline text-lg">
+                    Instagram {CONTACT_INFO.instagram}
+                  </a>
+                </li>
+                <li className="border-b border-border py-3 text-lg text-muted-foreground">{t(CONTACT_INFO.location, l)}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </Reveal>
@@ -227,7 +247,7 @@ function HomePage() {
 
       <Reveal as="section" className="border-t border-border">
         <div className="mx-auto max-w-[1600px] px-5 py-24 md:px-10">
-          <Link to="/$lang/contact" params={{ lang: l }} className="display block text-6xl hover-underline md:text-8xl">
+          <Link to="/$lang/contact" params={{ lang: l }} className="display block text-8xl hover-underline md:text-10xl">
             {d.common.getInTouch} →
           </Link>
         </div>
