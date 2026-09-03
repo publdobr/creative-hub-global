@@ -12,4 +12,14 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Alias `node:util` to a local shim so the project can build in environments
+  // where `styleText` is not present on the built-in `node:util` (e.g., Node < 20).
+  // Lovable may run older Node; this prevents build-time crashes in rolldown.
+  vite: {
+    resolve: {
+      alias: [
+        { find: "node:util", replacement: "/src/shims/node-util.js" },
+      ],
+    },
+  },
 });
